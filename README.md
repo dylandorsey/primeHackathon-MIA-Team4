@@ -1,10 +1,9 @@
 # Collaborators
 
+* Ashley Bennet
 * Dylan Dorsey
-* Katie Mikul
-* Nathan Kean
-* Pa Yeng Thao
-* Sam Vanderlinden
+* Henry Hall
+* Sean Denniston
 
 # Express/Passport with React
 This version uses React to control the login requests and redirection in coordination with client-side routing.

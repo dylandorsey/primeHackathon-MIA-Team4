@@ -1,9 +1,0 @@
-id,firstName,lastName,phone,email,date,time,endTime,dateCreated,datetimeCreated,datetime,price,priceSold,paid,amountPaid,type,appointmentTypeID,addonIDs,category,duration,calendar,calendarID,forms,location,notes,timezone,calendarTimezone,canceled,canClientCancel,canClientReschedule,lat,lng,travel_time,travel_distance
-1,Pa Yeng,Thao,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,photog 1,null,null,null,null,null,null,null,null,null,46.7296,-94.6859,null,100
-2,Pa  ,Thao,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,photog 2,null,null,null,null,null,null,null,null,null,46.8296,-94.6859,null,30
-3,p,h,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,photog 3,null,null,null,null,null,null,null,null,null,45.7296,-94.6859,null,60
-4,a,t,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,photog 4,null,null,null,null,null,null,null,null,null,46.6296,-94.6859,null,20
-5,y,a,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,photog 5,null,null,null,null,null,null,null,null,null,46.5296,-94.6859,null,50
-6,e,o,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,photog 6,null,null,null,null,null,null,null,null,null,46.4296,-94.6859,null,50
-7,n,p,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,photog 7,null,null,null,null,null,null,null,null,null,46.3296,-94.6859,null,50
-8,g,y,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,photog 8,null,null,null,null,null,null,null,null,null,46.2296,-94.6859,null,50

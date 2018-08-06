@@ -9,11 +9,6 @@ import {
 import Header from './components/Header/Header';
 import LoginPage from './components/LoginPage/LoginPage';
 import RegisterPage from './components/RegisterPage/RegisterPage';
-import ScheduleView from './components/ScheduleView/ScheduleView';
-
-import MapView from './components/MapView/MapView';
-
-import './calendar.css'
 
 const App = () => (
   <div>
@@ -28,14 +23,6 @@ const App = () => (
         <Route
           path="/register"
           component={RegisterPage}
-        />
-        <Route
-          path="/schedule"
-          component={ScheduleView}
-        />
-        <Route
-          path="/map"
-          component={MapView}
         />
         {/* OTHERWISE no path */}
         <Route
