@@ -1,0 +1,343 @@
+@import './variables.less';
+@import './reset.less';
+
+body{
+  font-family: 'Roboto', sans-serif;
+  color: #2a3134;
+}
+.rbc-calendar {
+  box-sizing: border-box;
+  height: 100%;
+  display: block;
+  flex-direction: column;
+  align-items: stretch;
+  overflow-x: scroll;
+}
+
+.rbc-calendar *,
+.rbc-calendar *:before,
+.rbc-calendar *:after {
+  box-sizing: inherit;
+}
+
+.rbc-abs-full {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.rbc-ellipsis {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rbc-rtl {
+  direction: rtl;
+}
+
+.rbc-off-range {
+  color: @out-of-range-color;
+}
+
+.rbc-header {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 3px;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 90%;
+  min-height: 0;
+  min-width: 900px;
+
+  > a {
+    &, &:active, &:visited {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}
+
+.rbc-row-content {
+  position: relative;
+  user-select: none;
+  z-index: 4;
+}
+
+.rbc-today {
+  background-color: @today-highlight-bg;
+}
+
+/* add color for availability */
+div.rbc-day-slot .available-slot-color { background-color: @available-slot-color } 
+div.rbc-month-row .available-slot-color { background-color: @available-slot-color }
+
+/* start custom css for the drag and drop event */
+.rbc-addons-dnd {
+  .rbc-row-content {
+    pointer-events: none;
+
+    & .rbc-show-more,
+    & .rbc-event:not(.rbc-addons-dnd-dragging) {
+      pointer-events: all;
+    }
+  }
+
+  .rbc-addons-dnd-over {
+    background-color: rgba(
+      red(@date-selection-bg-color),
+      green(@date-selection-bg-color),
+      blue(@date-selection-bg-color),
+      .3
+    ) !important;
+  }
+
+  .rbc-event {
+    transition: opacity 150ms;
+    pointer-events: all;
+  }
+
+  &.rbc-addons-dnd-is-dragging .rbc-event {
+    pointer-events: none;
+    opacity: .50;
+  }
+
+  // .rbc-addons-dnd-dragging {
+  //   pointer-events: none;
+  //   opacity: .35;
+  // }
+}
+.rbc-event:active .appointment_box {
+    display: none !important;
+}
+.rbc-event .appointment_box:active {
+  display: block !important;
+}
+/* end custom css for the drag and drop event */
+
+.appointment_box {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 0 1px rgba(0, 0, 0, 0.02);
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 0 1px rgba(0, 0, 0, 0.02);
+  border: 1px solid #ddd;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: 0px auto;
+  width: 268px;
+  position: absolute;
+  display: none;
+  z-index: 1000;
+}
+.rbc-day-slot .rbc-event, .rbc-month-row {
+  overflow: inherit !important;
+}
+.topbar {
+  background-color:#09A8DC;
+  padding: 5px 10px;
+  overflow: hidden;
+}
+.info-title {
+  float: left;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 400;
+}
+.icons {
+  float: right;
+}
+.icons ul{
+  padding: 0px;
+  margin: 0px;
+  text-align: right;
+}
+
+  .icons ul li {
+  margin: 0px;
+  padding: 0px;
+  display: inline;
+  list-style: none;
+}
+.icons ul li a {
+  display: inline-block;
+  color: #fff;
+  font-size: 14px;
+  vertical-align: top;
+  padding: 0px 5px 0px;
+}
+.icons ul li a.edit {
+  font-size: 17px;
+}
+.icons ul li a.trash {
+  font-size: 16px;
+}
+.icons ul li a.cut {
+  font-size: 18px;
+  opacity: 0.6;
+  padding: 2px 0 0 15px;
+}
+.icons ul li a:hover {
+  opacity: 0.7;
+}
+.icons ul li a:hover.cut{opacity: 1;}
+.info-content {
+  padding: 10px;
+  overflow: hidden;
+}
+.quickview {
+  padding: 0px;
+  margin: 0px;
+  text-align: left;
+  width: 35px;
+}
+.quickview li {
+  display: inline-block;
+  width: 50%;
+  float: left;
+  padding: 2px 0px 2px 0px;
+  font-size: 12px;
+}
+.boxicon{text-align: left; position: absolute; top: 0px;}
+.boxicon i{font-size: 15px; color: rgba(0, 0, 0, 0.50); padding: 0px 5px 0px 0px;}
+
+.info-pic {
+  text-align: center;
+  width: 100%;
+  margin-bottom:3px;
+}
+.personal-info img {
+  border: 1px solid #ddd;
+  border-radius: 50%;
+
+}
+.info-p {
+  color: #000;
+  width: 100%;
+  text-align: center;
+}
+.name {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.name:hover {color:#09a7dc;}
+
+.about-event{padding:10px 0px 0px;float: left; width: 100%; white-space: normal;}
+.personal-info{border-bottom: 1px solid #ddd; float: left; width: 100%; padding:10px 0; position: relative;}
+.info-p p {
+  margin: 0px 0px 5px;
+  padding: 0;
+}
+.info-p p i {
+  color: #7a7a7a;
+  padding-right: 5px;
+}
+.info-p p span {
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 500;
+}
+.info-p a {
+  color: #09a8dc;
+  display: block;
+  padding-top:2px;
+}
+.rbc-event{cursor: default;}
+.rbc-event:hover .appointment_box {
+  display: block;
+}
+/*for month*/
+.rbc-row-segment{position: relative;}
+.appointment_box.month_box {
+  left: 100%;
+  right: inherit;
+}
+.appointment_box.month_box::before, .appointment_box.dayslot::before {
+  border-bottom: 10px solid transparent;
+  border-right: 15px solid #09a8dc;
+  border-top: 10px solid transparent;
+  content: "";
+  left: -15px;
+  position: absolute;
+  top: 5px;
+  z-index: 11;
+}
+
+.custom-class-sat .appointment_box.dayslot,
+.custom-class-7 .appointment_box.month_box, .custom-class-6 .appointment_box.month_box,
+.custom-class-7 .appointment_box.dayslot, .custom-class-6 .appointment_box.dayslot {
+  left: auto;
+  right: 100%;
+}
+.custom-class-sat .appointment_box:before,
+.custom-class-7 .appointment_box.month_box::before, .custom-class-6 .appointment_box.month_box:before,
+.custom-class-7 .appointment_box.dayslot::before, .custom-class-6 .appointment_box.dayslot:before {
+  left: auto;
+  right: -15px;
+  transform: rotate(180deg);
+}
+.rbc-row-content
+{
+  z-index: inherit;
+}
+.rbc-date-cell{min-height: 55px;}
+.rbc-month-view .rbc-month-row:nth-last-child(1) .rbc-row-content .rbc-row .rbc-row-segment .rbc-event-content .appointment_box.month_box,
+.rbc-month-view .rbc-month-row:nth-last-child(2) .rbc-row-content .rbc-row .rbc-row-segment .rbc-event-content .appointment_box.month_box,
+.rbc-month-view .rbc-month-row:nth-last-child(3) .rbc-row-content .rbc-row .rbc-row-segment .rbc-event-content .appointment_box.month_box,
+.appointment_box.hoverup {
+    top: initial;
+    bottom: 0px;
+}
+.rbc-month-view .rbc-month-row:nth-last-child(1) .rbc-row-content .rbc-row .rbc-row-segment .rbc-event-content .appointment_box.month_box::before,
+.rbc-month-view .rbc-month-row:nth-last-child(2) .rbc-row-content .rbc-row .rbc-row-segment .rbc-event-content .appointment_box.month_box::before,
+.rbc-month-view .rbc-month-row:nth-last-child(3) .rbc-row-content .rbc-row .rbc-row-segment .rbc-event-content .appointment_box.month_box::before,
+.appointment_box.hoverup:before {
+    top: inherit;
+    bottom: 0px;
+    border-right-color: #fff;
+}
+/*Day appointment*/
+.appointment_box.dayslot {
+  left: 50%;
+  right: inherit;
+  width: 268px;
+}
+.rbc-day-slot .rbc-event {
+  display: block !important;
+  height: auto;
+  /*left: 0 !important;*/
+  position: absolute;
+  /*width: 100% !important;*/
+  z-index: inherit !important;
+}
+.pr5{padding-right: 5px;}
+.rbc-day-slot .rbc-event.colwrap {
+    display: inherit !important;
+    flex-flow: wrap !important;
+    ms-flex-flow: wrap !important;
+}
+/*for appointment box show*/
+.rbc-time-content{overflow-y: inherit !important;}
+/*Custom Media*/
+@media (max-width: 575px)
+{
+.appointment_box {
+  width:180px;
+}
+.topbar{padding: 5px;}
+.info-title, .icons ul li a.edit, .icons ul li a.trash{font-size: 13px;}
+.icons ul li a{padding: 0px 3px 0px;}
+.info-p{white-space: normal;}
+
+}
+@import './toolbar.less';
+@import './event.less';
+@import './month.less';
+@import './agenda.less';
+@import './time-grid.less';

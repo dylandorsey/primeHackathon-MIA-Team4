@@ -1,0 +1,40 @@
+.loader {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    animation: spin 2s linear infinite;
+    margin: 0px auto;
+}
+
+.loaderContainer {
+    display: grid;
+    grid-template-rows: 2/3fr 1/3fr;
+    position: absolute;
+    margin-left:auto;
+    margin-right:auto;
+    left: 0;
+    right: 0;
+    opacity: 0.90;
+    background-color:#F5F5F5;
+    height: 360px;
+    width:360px;
+    padding-top: 80px;
+}
+
+.loaderMessage {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    align-self: center;
+    justify-self: middle;
+    position: relative;
+    margin: auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
