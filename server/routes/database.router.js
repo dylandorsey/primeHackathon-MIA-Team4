@@ -1,11 +1,11 @@
 const express = require('express');
 const { rejectUnauthenticated } = require('../modules/authentication-middleware');
+const router = express.Router();
 
 // unused code here as exmample:
 // const Appointment = require('../models/Appointment');
 // const Calendar = require('../models/Calendar');
 
-// const router = express.Router();
 
 // router.get('/appointments', rejectUnauthenticated, (req, res) => {
 //     Appointment.find({})
